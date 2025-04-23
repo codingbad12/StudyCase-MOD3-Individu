@@ -1,0 +1,26 @@
+<?php
+
+namespace Tests\Browser;
+
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Browser;
+use Tests\DuskTestCase;
+
+class LoginTest extends DuskTestCase
+{
+    /**
+     * A Dusk test example.
+     */
+    public function testExample(): void
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit(url:'/')
+                    ->clickLink(link:'Log in') //Meklik button log in
+                    ->assertPathIs(path:'/login') //Masuk ke page log in 
+                    ->type(field:'email',value:'admin@gmail.com') //Memasukan email di field email
+                    ->type(field:'password',value:'password') //Memasukan passowrd di field password
+                    ->press('LOG IN') //Meklik button Log in
+                    ->assertPathIs(path:'/dashboard'); //Masuk ke page dashboard
+        });
+    }
+}
