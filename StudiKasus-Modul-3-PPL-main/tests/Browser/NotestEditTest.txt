@@ -23,7 +23,7 @@ class NotestEditTest extends DuskTestCase
             ->clickLink(link:'Notes') //menekan tautan ‘Notes’
             ->assertPathIs(path:'/notes') //memastikan url setelah menekan tautan sebelumnya
             ->clickLink('Edit') //menekan tombol edit dari form
-            ->assertPathIs(path:'/edit-note-page/2') //memastikan url setelah menekan tautan sebelumnya
+            ->assertPathIs(path:'/edit-note-page/3') //memastikan url setelah menekan tautan sebelumnya
             ->type(field:'title',value:'NEWER Test Note') //mengisi input yang memiliki atribut name title.
             ->type(field:'description',value:'This is a NEWER test note.') //mengisi input yang memiliki atribut name description.
             ->press('UPDATE') //menekan tombol update untuk menyimpan perubahan catatan
